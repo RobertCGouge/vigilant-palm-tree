@@ -2,7 +2,7 @@
 async fn health_check_works() {
     // Arrange
     spawn_app();
-    // We need to bring in `reqwest` 
+    // We need to bring in `reqwest`
     // to perform HTTP requests against our application.
     let client = reqwest::Client::new();
 
