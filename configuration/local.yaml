@@ -1,4 +1,4 @@
 application_configuration:
   host: 127.0.0.1
-database:
+database_configuration:
   require_ssl: false
