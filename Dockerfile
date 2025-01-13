@@ -1,4 +1,3 @@
-ARG PACKAGE=zero2prod
 FROM lukemathwalker/cargo-chef:latest-rust-1.83.0 AS chef
 WORKDIR /app
 RUN apt update && apt install lld clang -y
@@ -20,7 +19,7 @@ ENV SQLX_OFFLINE=true
 RUN cargo build --release --bin zero2prod
 
 FROM cgr.dev/chainguard/glibc-dynamic
-COPY --from=build --chown=nonroot:nonroot /app/target/release/${PACKAGE} /usr/local/bin/${PACKAGE}
+COPY --from=build --chown=nonroot:nonroot /app/target/release/zero2prod /usr/local/bin/zero2prod
 COPY --chown=nonroot:nonroot configuration /usr/local/bin/configuration
 ENV APP_ENVIRONMENT=production
-CMD ["/usr/local/bin/${PACKAGE}"]
+CMD ["/usr/local/bin/zero2prod"]
