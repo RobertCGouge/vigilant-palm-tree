@@ -23,6 +23,7 @@ pub struct DatabaseConfiguration {
 
 pub fn get_config() -> Result<Config, config::ConfigError> {
     let base_path = std::env::current_dir().expect("Failed to determine the current directory");
+    println!("{:?}", base_path);
     let configuration_directory = base_path.join("configuration");
 
     // Detect the running environment.

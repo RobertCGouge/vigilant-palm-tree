@@ -20,6 +20,7 @@ RUN cargo build --release --bin zero2prod
 
 FROM cgr.dev/chainguard/glibc-dynamic
 COPY --from=build --chown=nonroot:nonroot /app/target/release/zero2prod /usr/local/bin/zero2prod
-COPY --chown=nonroot:nonroot configuration /usr/local/bin/configuration
+COPY --chown=nonroot:nonroot configuration/ /usr/local/bin/configuration/
+WORKDIR /usr/local/bin
 ENV APP_ENVIRONMENT=production
 CMD ["/usr/local/bin/zero2prod"]
