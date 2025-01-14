@@ -4,8 +4,8 @@ use sqlx::postgres::PgConnectOptions;
 use sqlx::postgres::PgSslMode;
 #[derive(serde::Deserialize)]
 pub struct Config {
-    pub database_configuration: DatabaseConfiguration,
-    pub application_configuration: ApplicationConfiguration,
+    pub database: DatabaseConfiguration,
+    pub application: ApplicationConfiguration,
 }
 
 #[derive(serde::Deserialize)]
