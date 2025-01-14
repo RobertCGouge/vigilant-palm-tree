@@ -38,8 +38,8 @@ async fn spawn_app() -> TestApp {
     let address = format!("http://127.0.0.1:{}", port);
 
     let mut configuration = get_config().expect("Failed to read configuration.");
-    configuration.database_configuration.database = Uuid::new_v4().to_string();
-    let connection_pool = configure_database(&configuration.database_configuration).await;
+    configuration.database.database = Uuid::new_v4().to_string();
+    let connection_pool = configure_database(&configuration.database).await;
 
     let server = run(listener, connection_pool.clone()).expect("Failed to bind address");
     let server = tokio::spawn(server);
