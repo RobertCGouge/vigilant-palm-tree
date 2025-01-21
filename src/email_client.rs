@@ -78,11 +78,14 @@ mod tests {
     use wiremock::{Mock, MockServer, Request, ResponseTemplate};
 
     /// Generate a random email subject
+    #[allow(dead_code)]
     fn subject() -> String {
         Sentence(1..2).fake()
     }
 
     /// Generate a random email content
+
+    #[allow(dead_code)]
     fn content() -> String {
         Paragraph(1..10).fake()
     }
