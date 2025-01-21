@@ -2,3 +2,7 @@ application:
   host: 0.0.0.0
 database:
   require_ssl: true
+email_client:
+  #This comes from https://postmarkapp.com/developer/user-guide/send-email-with-api
+  base_url: "https://api.postmarkapp.com"
+  sender_email: "robert@gouge.me"
