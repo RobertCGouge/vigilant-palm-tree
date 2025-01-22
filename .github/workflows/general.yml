@@ -9,9 +9,9 @@ on:
   push:
     branches:
       - develop
-      - health_check
+      - sub-tokens
   pull_request:
-    types: [opened, synchronize, reopened]
+    types: [ opened, synchronize, reopened ]
     branches:
       - develop
 
