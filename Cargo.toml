@@ -37,6 +37,7 @@ anyhow = "1.0.95"
 thiserror = "2"
 base64 = "0.22"
 argon2 = { version = "0.5", features = ["std"] }
+password-hash = { version = "0.5.0", features = ["rand_core"] }
 
 [dependencies.sqlx]
 version = "0.8"

@@ -1,5 +1,4 @@
 use validator::ValidateEmail;
-
 #[derive(Debug)]
 pub struct SubscriberEmail(String);
 
@@ -36,8 +35,6 @@ mod tests {
     use claims::assert_err;
     use fake::faker::internet::en::SafeEmail;
     use fake::Fake;
-    use rand::prelude::StdRng;
-    use rand::SeedableRng;
 
     #[derive(Debug, Clone)]
     struct ValidEmailFixture(pub String);
@@ -52,8 +49,7 @@ mod tests {
             // This way we can generate a random valid email every time `quickcheck`
             // calls `arbitrary`, and the generation process is deterministic for
             // a given seed.
-            let mut rng = StdRng::seed_from_u64(u64::arbitrary(g));
-            let email = SafeEmail().fake_with_rng(&mut rng);
+            let email = SafeEmail().fake_with_rng(&mut password_hash::rand_core::OsRng);
 
             Self(email)
         }
