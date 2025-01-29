@@ -34,7 +34,7 @@ quickcheck = "1.0.3"
 quickcheck_macros = "1"
 rand = { version = "0.8", features = ["std_rng"] }
 anyhow = "1.0.95"
-thiserror = "1"
+thiserror = "2"
 base64 = "0.22"
 argon2 = { version = "0.5", features = ["std"] }
 
