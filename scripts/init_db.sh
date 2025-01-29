@@ -25,7 +25,7 @@ then
   # Launch postgres using Docker
   CONTAINER_NAME="postgres"
   docker run \
-      --env POSTGRES_PASSWORD=${SUPERUSER_PWD} \
+      --env POSTGRES_PASSWORD="${SUPERUSER_PWD}" \
       --health-cmd="pg_isready -U ${SUPERUSER} || exit 1" \
       --health-interval=1s \
       --health-timeout=5s \

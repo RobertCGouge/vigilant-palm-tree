@@ -43,7 +43,7 @@ impl Application {
             configuration.application.host, configuration.application.port
         );
         let listener = TcpListener::bind(address)?;
-        let port = listener.local_addr().unwrap().port();
+        let port = listener.local_addr()?.port();
         let server = run(
             listener,
             connection_pool,
@@ -72,8 +72,8 @@ pub fn run(
     email_client: EmailClient,
     base_url: String,
 ) -> Result<Server, std::io::Error> {
-    let db_pool = web::Data::new(db_pool);
-    let email_client = web::Data::new(email_client);
+    let db_pool = Data::new(db_pool);
+    let email_client = Data::new(email_client);
     let base_url = Data::new(ApplicationBaseUrl(base_url));
     let server = HttpServer::new(move || {
         App::new()
