@@ -95,7 +95,7 @@ impl TestUser {
     }
 
     async fn store(&self, pool: &PgPool) {
-        let salt = SaltString::generate(&mut rand::thread_rng());
+        let salt = SaltString::generate(&mut password_hash::rand_core::OsRng);
         // Match parameters of the default password
         let password_hash = Argon2::new(
             Algorithm::Argon2id,

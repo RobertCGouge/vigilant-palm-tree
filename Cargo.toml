@@ -29,14 +29,15 @@ tracing-actix-web = "0.7"
 serde-aux = "4"
 unicode-segmentation = "1"
 claims = "0.8.0"
-validator = "0.19.0"
+validator = "0.20.0"
 quickcheck = "1.0.3"
 quickcheck_macros = "1"
-rand = { version = "0.8", features = ["std_rng"] }
+rand = { version = "0.9", features = ["std_rng"] }
 anyhow = "1.0.95"
-thiserror = "1"
+thiserror = "2"
 base64 = "0.22"
 argon2 = { version = "0.5", features = ["std"] }
+password-hash = { version = "0.5.0", features = ["rand_core"] }
 
 [dependencies.sqlx]
 version = "0.8"
@@ -50,7 +51,7 @@ default-features = false
 features = ["json", "rustls-tls"]
 
 [dev-dependencies]
-fake = "2.9"
+fake = "3.1"
 wiremock = "0.6"
 serde_json = "1"
 linkify = "0.10"
