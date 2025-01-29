@@ -32,7 +32,7 @@ claims = "0.8.0"
 validator = "0.20.0"
 quickcheck = "1.0.3"
 quickcheck_macros = "1"
-rand = { version = "0.8", features = ["std_rng"] }
+rand = { version = "0.9", features = ["std_rng"] }
 anyhow = "1.0.95"
 thiserror = "2"
 base64 = "0.22"
