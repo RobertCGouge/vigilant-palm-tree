@@ -83,8 +83,6 @@ mod tests {
         Sentence(1..2).fake()
     }
 
-    /// Generate a random email content
-
     #[allow(dead_code)]
     fn content() -> String {
         Paragraph(1..10).fake()
